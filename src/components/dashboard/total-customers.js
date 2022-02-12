@@ -11,7 +11,7 @@ export const TotalCustomers = (props) => (
             TOTAL ENTRIES
           </Typography>
           <Typography color="textPrimary" variant="h4">
-            {props.entryCount}
+            {props.entrycount}
           </Typography>
         </Grid>
         <Grid item>

@@ -10,9 +10,26 @@ import { TotalProfit } from "../components/dashboard/total-profit";
 import { TrafficByDevice } from "../components/dashboard/traffic-by-device";
 import { DashboardLayout } from "../components/dashboard-layout";
 import { useSelector, useDispatch } from "react-redux";
+import { getCount } from "../redux/features/dashboard/dashboardSlice";
+import { useEffect } from "react";
+import { useGetEntryCountQuery, useGetLastEntriesQuery } from "src/redux/features/entriesAPI";
 
 const Dashboard = () => {
-  const entryCount = useSelector((state) => state.dashboard.totalEntriesCount);
+  const {
+    data: entrycount,
+    error: getEntryCountError,
+    isLoading: getEntryCountLoading,
+  } = useGetEntryCountQuery();
+
+  const {
+    data: lastentries,
+    error: getLastEntriesError,
+    isLoading: getLastEntriesLoading,
+    //poll every 2 minutes
+  } = useGetLastEntriesQuery(10, { pollingInterval: 120000 });
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <Head>
@@ -31,7 +48,7 @@ const Dashboard = () => {
               <Budget />
             </Grid>
             <Grid item xl={3} lg={3} sm={6} xs={12}>
-              <TotalCustomers entryCount={entryCount} />
+              <TotalCustomers entrycount={entrycount} />
             </Grid>
             <Grid item xl={3} lg={3} sm={6} xs={12}>
               <TasksProgress />

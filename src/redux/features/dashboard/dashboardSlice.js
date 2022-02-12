@@ -1,4 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+export const getCount = createAsyncThunk("entries/getCount", async () => {
+  return fetch("http://localhost:3001/api/entry/count").then((res) => res.json());
+});
 
 const initialState = {
   totalEntriesCount: 555,
@@ -35,6 +39,18 @@ export const dashboardSlice = createSlice({
     // changeRoomPopulation: (state, action) => {
     //   state.roomPopulation = action.payload;
     // },
+  },
+  extraReducers: {
+    [getCount.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [getCount.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.totalEntriesCount = action.payload;
+    },
+    [getCount.rejected]: (state, action) => {
+      state.loading = false;
+    },
   },
 });
 
