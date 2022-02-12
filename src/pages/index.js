@@ -21,13 +21,6 @@ const Dashboard = () => {
     isLoading: getEntryCountLoading,
   } = useGetEntryCountQuery();
 
-  const {
-    data: lastentries,
-    error: getLastEntriesError,
-    isLoading: getLastEntriesLoading,
-    //poll every 2 minutes
-  } = useGetLastEntriesQuery(10, { pollingInterval: 120000 });
-
   const dispatch = useDispatch();
 
   return (

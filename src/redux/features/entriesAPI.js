@@ -8,7 +8,7 @@ export const entriesApi = createApi({
       query: () => "count",
     }),
     getLastEntries: builder.query({
-      query: (quantity) => "lastEntries",
+      query: (quantity = 10) => `${quantity}`,
     }),
   }),
 });
