@@ -90,7 +90,7 @@ export const Sales = (props) => {
 
   return (
     <Card {...props}>
-      <CardHeader title="Latest Sales" />
+      <CardHeader title="Entries per Hour" />
       <Divider />
       <CardContent>
         <Box
@@ -109,11 +109,7 @@ export const Sales = (props) => {
           justifyContent: "flex-end",
           p: 2,
         }}
-      >
-        <Button color="primary" endIcon={<ArrowRightIcon fontSize="small" />} size="small">
-          Overview
-        </Button>
-      </Box>
+      ></Box>
     </Card>
   );
 };
