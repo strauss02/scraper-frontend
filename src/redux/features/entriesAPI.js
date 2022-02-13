@@ -2,19 +2,34 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const entriesApi = createApi({
   reducerPath: "entriesApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/api/entry/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/api/" }),
   endpoints: (builder) => ({
     getEntryCount: builder.query({
-      query: () => "count",
+      query: () => "entry/count",
+    }),
+    getEntryCountToday: builder.query({
+      query: () => "/stats/today_count",
+    }),
+    getTopicDetails: builder.query({
+      query: () => "/stats/topic_count",
+    }),
+    getEntriesByHour: builder.query({
+      query: () => "/stats/hourly",
     }),
     getLastEntries: builder.query({
-      query: (quantity = 10) => `${quantity}`,
+      query: (quantity = 10) => `entry/${quantity}`,
     }),
     getEntriesBySearch: builder.query({
-      query: (input = "") => `/search/${input}`,
+      query: (input = "") => `entry/search/${input}`,
     }),
   }),
 });
 
-export const { useGetEntryCountQuery, useGetLastEntriesQuery, useGetEntriesBySearchQuery } =
-  entriesApi;
+export const {
+  useGetEntriesByHourQuery,
+  useGetTopicDetailsQuery,
+  useGetEntryCountQuery,
+  useGetEntryCountTodayQuery,
+  useGetLastEntriesQuery,
+  useGetEntriesBySearchQuery,
+} = entriesApi;

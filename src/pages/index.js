@@ -12,7 +12,13 @@ import { DashboardLayout } from "../components/dashboard-layout";
 import { useSelector, useDispatch } from "react-redux";
 import { getCount } from "../redux/features/dashboard/dashboardSlice";
 import { useEffect } from "react";
-import { useGetEntryCountQuery, useGetLastEntriesQuery } from "src/redux/features/entriesAPI";
+import {
+  useGetEntryCountQuery,
+  useGetEntryCountToday,
+  useGetEntryCountTodayQuery,
+  useGetLastEntriesQuery,
+  useGetTopicDetailsQuery,
+} from "src/redux/features/entriesAPI";
 
 const Dashboard = () => {
   const {
@@ -20,6 +26,18 @@ const Dashboard = () => {
     error: getEntryCountError,
     isLoading: getEntryCountLoading,
   } = useGetEntryCountQuery();
+
+  const {
+    data: dailycount,
+    error: dailycounterror,
+    isLoading: isDailyCountLoading,
+  } = useGetEntryCountTodayQuery();
+
+  const {
+    data: topicDetails,
+    error: topiccounterror,
+    isLoading: istopiccountloading,
+  } = useGetTopicDetailsQuery();
 
   const dispatch = useDispatch();
 
@@ -38,17 +56,19 @@ const Dashboard = () => {
         <Container maxWidth={false}>
           <Grid container spacing={3}>
             <Grid item lg={3} sm={6} xl={3} xs={12}>
-              <Budget />
+              <Budget dailycount={dailycount} />
             </Grid>
             <Grid item xl={3} lg={3} sm={6} xs={12}>
-              <TotalCustomers entrycount={entrycount} />
+              <TotalCustomers entrycount={entrycount} sx={{ height: "100%" }} />
             </Grid>
             <Grid item xl={3} lg={3} sm={6} xs={12}>
-              <TasksProgress />
+              <TasksProgress topicDetails={topicDetails} />
             </Grid>
+
             <Grid item xl={3} lg={3} sm={6} xs={12}>
-              <TotalProfit sx={{ height: "100%" }} />
+              <TotalProfit topicDetails={topicDetails} sx={{ height: "100%" }} />
             </Grid>
+
             <Grid item lg={8} md={12} xl={9} xs={12}>
               <Sales />
             </Grid>

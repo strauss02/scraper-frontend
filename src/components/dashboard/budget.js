@@ -8,10 +8,10 @@ export const Budget = (props) => (
       <Grid container spacing={3} sx={{ justifyContent: "space-between" }}>
         <Grid item>
           <Typography color="textSecondary" gutterBottom variant="overline">
-            BUDGET
+            DAILY ENTRIES
           </Typography>
           <Typography color="textPrimary" variant="h4">
-            $24k
+            {props.dailycount}
           </Typography>
         </Grid>
         <Grid item>
@@ -26,14 +26,14 @@ export const Budget = (props) => (
           </Avatar>
         </Grid>
       </Grid>
-      <Box
+      {/* <Box
         sx={{
           pt: 2,
           display: "flex",
           alignItems: "center",
         }}
-      >
-        <ArrowDownwardIcon color="error" />
+      > */}
+      {/* <ArrowDownwardIcon color="error" />
         <Typography
           color="error"
           sx={{
@@ -45,8 +45,8 @@ export const Budget = (props) => (
         </Typography>
         <Typography color="textSecondary" variant="caption">
           Since last month
-        </Typography>
-      </Box>
+        </Typography> */}
+      {/* </Box> */}
     </CardContent>
   </Card>
 );
