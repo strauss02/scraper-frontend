@@ -10,7 +10,11 @@ export const entriesApi = createApi({
     getLastEntries: builder.query({
       query: (quantity = 10) => `${quantity}`,
     }),
+    getEntriesBySearch: builder.query({
+      query: (input = "") => `/search/${input}`,
+    }),
   }),
 });
 
-export const { useGetEntryCountQuery, useGetLastEntriesQuery } = entriesApi;
+export const { useGetEntryCountQuery, useGetLastEntriesQuery, useGetEntriesBySearchQuery } =
+  entriesApi;

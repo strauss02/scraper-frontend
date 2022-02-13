@@ -25,19 +25,14 @@ const items = [
     title: "Dashboard",
   },
   {
-    href: "/customers",
-    icon: <UsersIcon fontSize="small" />,
-    title: "Customers",
-  },
-  {
     href: "/Entries",
     icon: <FeedIcon fontSize="small" />,
     title: "Entries",
   },
   {
-    href: "/account",
-    icon: <UserIcon fontSize="small" />,
-    title: "Account",
+    href: "/About",
+    icon: <UsersIcon fontSize="small" />,
+    title: "About",
   },
 ];
 
@@ -72,23 +67,27 @@ export const DashboardSidebar = (props) => {
           height: "100%",
         }}
       >
-        <Box sx={{ p: 2, display: "flex", alignContent: "center", alignItems: "center" }}>
-          <NextLink href="/" passHref>
-            <a>
+        <NextLink href="/" passHref>
+          <a style={{ textDecoration: "none", color: "inherit" }}>
+            <Box
+              sx={{ pt: 2, display: "flex", justifyContent: "left", ml: 3, alignItems: "center" }}
+            >
               <Logo
                 sx={{
                   height: 42,
                   width: 42,
                 }}
               />
-            </a>
-          </NextLink>
-          Scrapaste
-        </Box>
+              <Typography ml={1} variant="h4">
+                Scrapaste
+              </Typography>
+            </Box>
+          </a>
+        </NextLink>
         <Divider
           sx={{
             borderColor: "#2D3748",
-            my: 3,
+            my: 1,
           }}
         />
         <Box sx={{ flexGrow: 1 }}>

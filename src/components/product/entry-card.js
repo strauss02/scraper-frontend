@@ -11,7 +11,7 @@ export const EntryCard = ({ entry }) => {
 
   const mainEntities = entry.analysis.entitySentiment.entities
     .map((entity) => {
-      if (entity.salience > 0.5) {
+      if (entity.salience > 0.12 && entity.name.length < 24) {
         return entity["name"];
       }
     })
@@ -70,16 +70,22 @@ export const EntryCard = ({ entry }) => {
               display: "flex",
             }}
           >
+            {mainEntities.map((entity) => (
+              <SeverityPill
+                tooltipcontent="Entry topic"
+                sx={{ mr: 1, pl: 1 }}
+                key={`${entity}/${entry.id}`}
+              >
+                {entity}
+              </SeverityPill>
+            ))}
+
             <SeverityPill
               tooltipcontent="Sentiment score"
               color={colorizeBySentiment(sentimentScore)}
             >
               S: {sentimentScore} | M: {sentimentMagnitue}
             </SeverityPill>
-
-            {mainEntities.map((entity) => (
-              <SeverityPill key={`${entity}/${entry.id}`}>{entity}</SeverityPill>
-            ))}
           </Grid>
         </Grid>
       </Box>
