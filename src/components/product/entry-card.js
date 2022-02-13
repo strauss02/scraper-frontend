@@ -7,6 +7,16 @@ import { SeverityPill } from "../severity-pill";
 export const EntryCard = ({ entry }) => {
   const sentimentScore = entry.analysis.documentSentiment.documentSentiment.score.toFixed(2);
 
+  const sentimentMagnitue = entry.analysis.documentSentiment.documentSentiment.magnitude.toFixed(2);
+
+  const mainEntities = entry.analysis.entitySentiment.entities
+    .map((entity) => {
+      if (entity.salience > 0.5) {
+        return entity["name"];
+      }
+    })
+    .filter((entity) => entity);
+
   return (
     <Card
       sx={{
@@ -60,11 +70,16 @@ export const EntryCard = ({ entry }) => {
               display: "flex",
             }}
           >
-            <Tooltip title="Sentiment score">
-              <SeverityPill color={colorizeBySentiment(sentimentScore)}>
-                {sentimentScore}
-              </SeverityPill>
-            </Tooltip>
+            <SeverityPill
+              tooltipcontent="Sentiment score"
+              color={colorizeBySentiment(sentimentScore)}
+            >
+              S: {sentimentScore} | M: {sentimentMagnitue}
+            </SeverityPill>
+
+            {mainEntities.map((entity) => (
+              <SeverityPill key={`${entity}/${entry.id}`}>{entity}</SeverityPill>
+            ))}
           </Grid>
         </Grid>
       </Box>
@@ -85,7 +100,3 @@ function colorizeBySentiment(score) {
     return "verynegative";
   }
 }
-
-EntryCard.propTypes = {
-  product: PropTypes.object.isRequired,
-};

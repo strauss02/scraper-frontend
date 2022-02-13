@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-props-per-line */
 import Head from "next/head";
 import { Box, Container, Grid, Pagination } from "@mui/material";
 import { ProductListToolbar } from "../components/product/product-list-toolbar";
@@ -39,7 +40,7 @@ const Entries = () => {
                 </Grid>
               ) : (
                 lastentries.map((entry) => (
-                  <Grid item key={entry.id} lg={12} md={6} xs={12}>
+                  <Grid item key={entry._id} lg={12} md={6} xs={12}>
                     <EntryCard entry={entry} />
                   </Grid>
                 ))

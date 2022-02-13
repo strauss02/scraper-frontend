@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
+import { Tooltip } from "@mui/material";
 
 const SeverityPillRoot = styled("span")(({ theme, ownerState }) => {
   const backgroundColor = theme.palette[ownerState.color].main;
@@ -29,14 +30,16 @@ const SeverityPillRoot = styled("span")(({ theme, ownerState }) => {
 });
 
 export const SeverityPill = (props) => {
-  const { color = "primary", children, ...other } = props;
+  const { color = "primary", children, tooltipcontent = "", ...other } = props;
 
   const ownerState = { color };
 
   return (
-    <SeverityPillRoot ownerState={ownerState} {...other}>
-      {children}
-    </SeverityPillRoot>
+    <Tooltip title={tooltipcontent}>
+      <SeverityPillRoot ownerState={ownerState} {...other}>
+        {children}
+      </SeverityPillRoot>
+    </Tooltip>
   );
 };
 
@@ -50,6 +53,9 @@ SeverityPill.propTypes = {
     "warning",
     "success",
     "positive",
+    "verypositive",
     "negative",
+    "undecided",
+    "verynegative",
   ]),
 };

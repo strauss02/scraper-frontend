@@ -53,7 +53,7 @@ export const ProductListToolbar = (props) => (
                 variant="outlined"
               />
             </Grid>
-            <Grid item lg={1.5}>
+            <Grid item lg={1}>
               <TextField
                 value={props.displayValue}
                 id="filled-number"
