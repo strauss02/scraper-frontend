@@ -48,10 +48,10 @@
 
 - Add docs for IE11 polyfill
 - Fix `DisplayMode` component size, when used as a flex child it could grow/shrink
-- Fix `ProductCard` component description height
+- Fix `EntryCard` component description height
 - Fix `Typography` view responsiveness for small devices
 - Fix charts responsiveness
-- Remove "status" from `ProductCard` component since it was not part of released design
+- Remove "status" from `EntryCard` component since it was not part of released design
 - Remove `auth` service folder since it won't be implemented for this version
 - Remove `authGuard` since it won't be used in this version
 - Remove unused components from shared components

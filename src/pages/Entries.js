@@ -1,18 +1,19 @@
 import Head from "next/head";
 import { Box, Container, Grid, Pagination } from "@mui/material";
-import { products } from "../__mocks__/products";
 import { ProductListToolbar } from "../components/product/product-list-toolbar";
-import { ProductCard } from "../components/product/product-card";
+import { EntryCard } from "../components/product/entry-card";
 import { DashboardLayout } from "../components/dashboard-layout";
 import { useGetLastEntriesQuery } from "src/redux/features/entriesAPI";
+import { useState } from "react";
 
-const Products = () => {
+const Entries = () => {
+  const [displayValue, setDisplayValue] = useState(10);
   const {
     data: lastentries,
     error: getLastEntriesError,
     isLoading: getLastEntriesLoading,
     //poll every 2 minutes
-  } = useGetLastEntriesQuery(5, { pollingInterval: 120000 });
+  } = useGetLastEntriesQuery(displayValue, { pollingInterval: 120000 });
 
   return (
     <>
@@ -27,7 +28,7 @@ const Products = () => {
         }}
       >
         <Container maxWidth={false}>
-          <ProductListToolbar />
+          <ProductListToolbar displayValue={displayValue} setDisplayValue={setDisplayValue} />
           <Box sx={{ pt: 3 }}>
             <Grid container spacing={3}>
               {/* //this is it */}
@@ -39,7 +40,7 @@ const Products = () => {
               ) : (
                 lastentries.map((entry) => (
                   <Grid item key={entry.id} lg={12} md={6} xs={12}>
-                    <ProductCard entry={entry} />
+                    <EntryCard entry={entry} />
                   </Grid>
                 ))
               )}
@@ -59,6 +60,6 @@ const Products = () => {
     </>
   );
 };
-Products.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
+Entries.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 
-export default Products;
+export default Entries;
