@@ -1,96 +1,54 @@
-## [Material Kit - React](https://material-kit-react.devias.io/) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=%F0%9F%9A%A8Devias%20Freebie%20Alert%20-%20An%20awesome%20ready-to-use%20register%20page%20made%20with%20%23material%20%23react%0D%0Ahttps%3A%2F%2Fdevias.io%20%23createreactapp%20%23devias%20%23material%20%23freebie%20%40devias-io)
+<div id="top"></div>
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="images/logo.png" alt="Logo" >
 
-[![Material Kit - React](https://github.com/devias-io/material-kit-react/blob/main/public/static/thumbnail.png)](https://material-kit-react.devias.io/)
+  <p align="center">
+    the official backend repo of Scrapaste
+    <br />
+    <!-- <a href="https://0pv5ubqq5l.execute-api.eu-west-1.amazonaws.com/dev">API URL</a>
+    ·
+    <a href="http://dikto-client.s3-website.eu-west-3.amazonaws.com/">Visit App</a>
+    ·
+    <a href="https://github.com/strauss02/dikto-frontend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/strauss02/dikto-frontend/issues">Request Feature</a> -->
+  </p>
+</div>
 
-> Free React Admin Dashboard made with [MUI's](https://mui.com/?ref=devias-io) components, [React](https://reactjs.org/?ref=devias-io) and of course [Next.js](https://github.com/vercel/next.js/?ref=devias-io) to boost your app development process!
+## About The Project
 
-## Demo
+![](images/screenshot2.png)
 
-- [Dashboard Page](https://material-kit-react.devias.io)
-- [Users Page](https://material-kit-react.devias.io/customers)
-- [Products Page](https://material-kit-react.devias.io/products)
-- [Register Page](https://material-kit-react.devias.io/register)
-- [Login Page](https://material-kit-react.devias.io/login)
-- [Account Page](https://material-kit-react.devias.io/account)
-- [Settings Page](https://material-kit-react.devias.io/settings)
+Scrapaste is a scraping service that extracts information off darknet pastebins.
 
-## Free Figma Community File
- - [Duplicate File](https://www.figma.com/community/file/1039837897183395483/Devias-Dashboard-Design-Library-Kit)
+This project was originally created as a class project for my programming course
 
-## Upgrade to PRO Version
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-We also have a pro version of this product which bundles even more pages and components if you want to save more time and design efforts :)
+### Built With
 
-| Free Version (this one)  | [Material Kit Pro - React](https://material-ui.com/store/items/devias-kit-pro/) |
-| ------------------------ | :----------------------------------------------------------- |
-| **7** Demo Pages         | **40+** demo pages
-| -                        | ✔ Dark & light mode
-| -                        | ✔ Authentication with *Amplify**, **Auth0**, **JWT** and **Firebase**
-| -                        | ✔ TypeScript version - for Standard Plus and Extended license
-| -                        | ✔ Design files (sketch & figma) - for Standard Plus and Extended license
-| -                        | ✔ Complete users flows
+<br>
 
-## Quick start
+- React.js
+- Express
+- Next.js
+- Redux Toolkit
+- MongoDB
+- MUI
 
-- [Download from Github](https://github.com/devias-io/material-kit-react/archive/master.zip) or [Download from Devias](https://devias.io/products/material-kit-react) or clone the repo: `git clone https://github.com/devias-io/material-kit-react.git`
+<!-- GETTING STARTED -->
 
-- Make sure your NodeJS and npm versions are up to date for `React 17`
+## Getting Started
 
-- Install dependencies: `npm install` or `yarn`
+Sorry, still working on deployment!
 
-- Start the server: `npm run dev` or `yarn dev`
+### Prerequisites
 
-- Views are on: `localhost:3000`
+A modern browser.
 
-## File Structure
+<!-- USAGE EXAMPLES -->
 
-Within the download you'll find the following directories and files:
-
-```
-material-kit-react
-
-┌── .eslintrc.json
-├── .gitignore
-├── CHANGELOG.md
-├── jsconfig.json
-├── LICENSE.md
-├── package.json
-├── README.md
-├── public
-└── src
-	├── __mocks__
-	├── components
-	├── icons
-	├── theme
-	├── utils
-	└── pages
-		├── 404.js
-		├── _app.js
-		├── _document.js
-		├── account.js
-		├── customers.js
-		├── index.js
-		├── login.js
-		├── products.js
-		├── register.js
-		└── settings.js
-```
-
-## Resources
-
-- More freebies like this one: <https://devias.io>
-
-## Reporting Issues:
-
-- [Github Issues Page](https://github.com/devias-io/react-material-dashboard/issues?ref=devias-io)
-
-## License
-
-- Licensed under MIT (https://github.com/devias-io/react-material-dashboard/blob/master/LICENSE.md)
-
-## Contact Us
-
-- Email Us: support@deviasio.zendesk.com
-- [Follow us on Instagram](https://www.instagram.com/deviasio/)
+<p align="right">(<a href="#top">back to top</a>)</p>
