@@ -5,17 +5,23 @@ import { Download as DownloadIcon } from "../../icons/download";
 import { SeverityPill } from "../severity-pill";
 
 export const EntryCard = ({ entry }) => {
-  const sentimentScore = entry.analysis.documentSentiment.documentSentiment.score.toFixed(2);
+  const sentimentScore = entry.analysis.documentSentiment.documentSentiment
+    ? entry.analysis.documentSentiment.documentSentiment.score.toFixed(2)
+    : "0.00";
 
-  const sentimentMagnitue = entry.analysis.documentSentiment.documentSentiment.magnitude.toFixed(2);
+  const sentimentMagnitue = entry.analysis.documentSentiment.documentSentiment
+    ? entry.analysis.documentSentiment.documentSentiment.magnitude.toFixed(2)
+    : "0.00";
 
-  const mainEntities = entry.analysis.entitySentiment.entities
-    .map((entity) => {
-      if (entity.salience > 0.12 && entity.name.length < 24) {
-        return entity["name"];
-      }
-    })
-    .filter((entity) => entity);
+  const mainEntities = !entry.analysis.entitySentiment.entities
+    ? []
+    : entry.analysis.entitySentiment.entities
+        .map((entity) => {
+          if (entity.salience > 0.12 && entity.name.length < 24) {
+            return entity["name"];
+          }
+        })
+        .filter((entity) => entity);
 
   return (
     <Card

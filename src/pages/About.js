@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Container } from "@mui/material";
+import { Box, Card, Container, Paper, Typography } from "@mui/material";
 import { CustomerListResults } from "../components/customer/customer-list-results";
 import { CustomerListToolbar } from "../components/customer/customer-list-toolbar";
 import { DashboardLayout } from "../components/dashboard-layout";
@@ -18,10 +18,13 @@ const About = () => (
       }}
     >
       <Container maxWidth={false}>
-        <CustomerListToolbar />
-        <Box sx={{ mt: 3 }}>
-          <CustomerListResults customers={customers} />
-        </Box>
+        <Typography variant="h4">About us</Typography>
+        <Paper sx={{ p: 2 }}>
+          <Typography variant="body1">
+            <p>Scrapaste is a scraping service that extracts information off darknet pastebins.</p>
+            <p>This project was originally created as a class project for my programming course</p>
+          </Typography>
+        </Paper>
       </Container>
     </Box>
   </>
