@@ -87,9 +87,7 @@ const Entries = () => {
               justifyContent: "center",
               pt: 3,
             }}
-          >
-            <Pagination color="primary" count={3} size="small" />
-          </Box>
+          ></Box>
         </Container>
       </Box>
     </>

@@ -8,7 +8,7 @@ import { customers } from "../__mocks__/customers";
 const About = () => (
   <>
     <Head>
-      <title>Customers | Material Kit</title>
+      <title>Scrapaste | About</title>
     </Head>
     <Box
       component="main"
