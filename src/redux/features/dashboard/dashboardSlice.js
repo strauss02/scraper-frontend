@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getCount = createAsyncThunk("entries/getCount", async () => {
-  return fetch("http://localhost:3001/api/entry/count").then((res) => res.json());
+  return fetch("https://scrapaste-api.herokuapp.com/api/entry/count").then((res) => res.json());
 });
 
 const initialState = {

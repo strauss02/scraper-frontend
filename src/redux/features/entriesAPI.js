@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const entriesApi = createApi({
   reducerPath: "entriesApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/api/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://scrapaste-api.herokuapp.com/api/" }),
   endpoints: (builder) => ({
     getEntryCount: builder.query({
       query: () => "entry/count",
