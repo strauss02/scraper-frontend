@@ -5,8 +5,8 @@ import TagIcon from "@mui/icons-material/Tag";
 export const TotalProfit = (props) => {
   let tagsRecorded = "loading";
 
-  if (props.topicDetails) {
-    tagsRecorded = Object.values(props.topicDetails).length;
+  if (props.topicdetails) {
+    tagsRecorded = Object.values(props.topicdetails).length;
   }
 
   return (

@@ -34,7 +34,7 @@ const Dashboard = () => {
   } = useGetEntryCountTodayQuery();
 
   const {
-    data: topicDetails,
+    data: topicdetails,
     error: topiccounterror,
     isLoading: istopiccountloading,
   } = useGetTopicDetailsQuery();
@@ -62,11 +62,11 @@ const Dashboard = () => {
               <TotalCustomers entrycount={entrycount} sx={{ height: "100%" }} />
             </Grid>
             <Grid item xl={3} lg={3} sm={6} xs={12}>
-              <TasksProgress topicDetails={topicDetails} />
+              <TasksProgress topicdetails={topicdetails} />
             </Grid>
 
             <Grid item xl={3} lg={3} sm={6} xs={12}>
-              <TotalProfit topicDetails={topicDetails} sx={{ height: "100%" }} />
+              <TotalProfit topicdetails={topicdetails} sx={{ height: "100%" }} />
             </Grid>
 
             <Grid item lg={8} md={12} xl={9} xs={12}>
@@ -74,7 +74,7 @@ const Dashboard = () => {
             </Grid>
 
             <Grid item lg={4} md={6} xl={3} xs={12}>
-              <TrafficByDevice topicDetails={topicDetails} sx={{ height: "100%" }} />
+              <TrafficByDevice topicdetails={topicdetails} sx={{ height: "100%" }} />
             </Grid>
           </Grid>
         </Container>

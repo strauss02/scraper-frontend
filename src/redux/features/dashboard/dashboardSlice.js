@@ -5,7 +5,7 @@ export const getCount = createAsyncThunk("entries/getCount", async () => {
 });
 
 const initialState = {
-  totalEntriesCount: 555,
+  totalEntriesCount: 0,
   Stat2: "",
   Stat3: "",
   stat4: {

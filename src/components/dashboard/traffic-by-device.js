@@ -7,19 +7,19 @@ import { useGetTopicDetailsQuery } from "src/redux/features/entriesAPI";
 
 export const TrafficByDevice = (props) => {
   const theme = useTheme();
-  const { topicDetails } = props;
+  const { topicdetails } = props;
 
   let slicedValuesSorted = [];
   let tagsRecorded;
   let highestTags = [];
   let allOtherTagsCount;
-  if (topicDetails) {
-    tagsRecorded = Object.values(topicDetails).length; // 1088
+  if (topicdetails) {
+    tagsRecorded = Object.values(topicdetails).length; // 1088
 
-    let valuesSorted = Object.values(props.topicDetails).sort((a, b) => b - a);
+    let valuesSorted = Object.values(props.topicdetails).sort((a, b) => b - a);
     slicedValuesSorted = valuesSorted.slice(0, 5);
     highestTags = slicedValuesSorted.map((value) => {
-      return Object.keys(topicDetails).find((key) => props.topicDetails[key] === value);
+      return Object.keys(topicdetails).find((key) => props.topicdetails[key] === value);
     });
 
     allOtherTagsCount = tagsRecorded - highestTags.reduce((a, b) => a + b, 0);

@@ -4,10 +4,10 @@ import InsertChartIcon from "@mui/icons-material/InsertChartOutlined";
 export const TasksProgress = (props) => {
   let popularTag = "loading";
 
-  if (props.topicDetails) {
-    let arr = Object.values(props.topicDetails);
+  if (props.topicdetails) {
+    let arr = Object.values(props.topicdetails);
     let max = Math.max(...arr);
-    popularTag = Object.keys(props.topicDetails).find((key) => props.topicDetails[key] === max);
+    popularTag = Object.keys(props.topicdetails).find((key) => props.topicdetails[key] === max);
   }
   return (
     <Card sx={{ height: "100%" }} {...props}>
